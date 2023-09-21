@@ -1,0 +1,80 @@
+client:
+  name: basic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "ServiceCoordinator-debug.module": ["<ServiceCoordinator-debug.module>"]
+  "ServiceCoordinatorPackageTests-debug.test": ["<ServiceCoordinatorPackageTests-debug.test>"]
+  "ServiceCoordinatorTests-debug.module": ["<ServiceCoordinatorTests-debug.module>"]
+  "main": ["<ServiceCoordinator-debug.module>"]
+  "test": ["<ServiceCoordinator-debug.module>","<ServiceCoordinatorPackageTests-debug.test>","<ServiceCoordinatorTests-debug.module>"]
+default: "main"
+nodes:
+  "/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Sources/ServiceCoordinator/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Tests/ServiceCoordinatorTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "<ServiceCoordinator-debug.module>":
+    tool: phony
+    inputs: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/Enums/HTTPMethod.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/Enums/NetworkError.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/Enums/ServiceStatus.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/ServiceCoordinator.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.swiftmodule"]
+    outputs: ["<ServiceCoordinator-debug.module>"]
+
+  "<ServiceCoordinatorPackageTests-debug.test>":
+    tool: phony
+    inputs: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinatorPackageTests.xctest/Contents/MacOS/ServiceCoordinatorPackageTests"]
+    outputs: ["<ServiceCoordinatorPackageTests-debug.test>"]
+
+  "<ServiceCoordinatorTests-debug.module>":
+    tool: phony
+    inputs: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinatorTests.build/ServiceCoordinatorTests.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinatorTests.swiftmodule"]
+    outputs: ["<ServiceCoordinatorTests-debug.module>"]
+
+  "C.ServiceCoordinator-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Sources/ServiceCoordinator/Enums/HTTPMethod.swift","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Sources/ServiceCoordinator/Enums/NetworkError.swift","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Sources/ServiceCoordinator/Enums/ServiceStatus.swift","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Sources/ServiceCoordinator/ServiceCoordinator.swift"]
+    outputs: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/Enums/HTTPMethod.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/Enums/NetworkError.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/Enums/ServiceStatus.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/ServiceCoordinator.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "ServiceCoordinator"
+    module-output-path: "/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.swiftmodule"
+    import-paths: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug"]
+    temps-path: "/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build"
+    objects: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/Enums/HTTPMethod.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/Enums/NetworkError.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/Enums/ServiceStatus.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/ServiceCoordinator.swift.o"]
+    other-args: ["-target","arm64-apple-macosx10.13","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-g","-j10","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/ServiceCoordinator-Swift.h","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib"]
+    sources: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Sources/ServiceCoordinator/Enums/HTTPMethod.swift","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Sources/ServiceCoordinator/Enums/NetworkError.swift","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Sources/ServiceCoordinator/Enums/ServiceStatus.swift","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Sources/ServiceCoordinator/ServiceCoordinator.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 10
+
+  "C.ServiceCoordinatorPackageTests-debug.test":
+    tool: shell
+    inputs: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/Enums/HTTPMethod.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/Enums/NetworkError.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/Enums/ServiceStatus.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.build/ServiceCoordinator.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinatorTests.build/ServiceCoordinatorTests.swift.o"]
+    outputs: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinatorPackageTests.xctest/Contents/MacOS/ServiceCoordinatorPackageTests"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/ServiceCoordinatorPackageTests.xctest/Contents/MacOS/ServiceCoordinatorPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug","-o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinatorPackageTests.xctest/Contents/MacOS/ServiceCoordinatorPackageTests","-module-name","ServiceCoordinatorPackageTests","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinatorPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-5.5/macosx","-target","arm64-apple-macosx12.0","-Xlinker","-add_ast_path","-Xlinker","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinatorTests.swiftmodule","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"]
+
+  "C.ServiceCoordinatorTests-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Tests/ServiceCoordinatorTests/ServiceCoordinatorTests.swift","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinator.swiftmodule"]
+    outputs: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinatorTests.build/ServiceCoordinatorTests.swift.o","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinatorTests.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "ServiceCoordinatorTests"
+    module-output-path: "/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinatorTests.swiftmodule"
+    import-paths: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug"]
+    temps-path: "/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinatorTests.build"
+    objects: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ServiceCoordinatorTests.build/ServiceCoordinatorTests.swift.o"]
+    other-args: ["-target","arm64-apple-macosx12.0","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-g","-j10","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib"]
+    sources: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Tests/ServiceCoordinatorTests/ServiceCoordinatorTests.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 10
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Sources/ServiceCoordinator/","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Tests/ServiceCoordinatorTests/","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Package.swift","/Users/maximilianoovandoramirez/Documents/ProyectosGitHub/ServiceCoordinator/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

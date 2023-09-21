@@ -1,0 +1,33 @@
+{
+  "configurations" : [
+    {
+      "id" : "8090E5A5-D01A-4290-9853-15D052A659B0",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:",
+          "identifier" : "ServiceCoordinator",
+          "name" : "ServiceCoordinator"
+        }
+      ]
+    },
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "ServiceCoordinatorTests",
+        "name" : "ServiceCoordinatorTests"
+      }
+    }
+  ],
+  "version" : 1
+}
