@@ -17,7 +17,7 @@ public enum ServiceStatus<T> {
     case success(data: T)
     
     /// Indicates a failed operation with an associated error.
-    case failed(error: Error)
+    case failed(error: NetworkError)
     
     /// Indicates an informational status with an associated code.
     case information(code: Int)

@@ -17,7 +17,7 @@
 
  - SeeAlso: `localizedDescription`
  */
-public enum NetworkError: Error {
+public enum NetworkError: Error, Equatable {
     /// No internet connection.
     case noInternetConnection
 
