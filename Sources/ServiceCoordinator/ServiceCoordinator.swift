@@ -52,7 +52,8 @@ public final class ServiceCoordinator {
         httpAdditionalHeaders: [AnyHashable : Any]? = nil,
         httpMaximumConnectionsPerHost: Int = 6,
         isDiscretionary: Bool = false,
-        networkServiceType: NSURLRequest.NetworkServiceType = .default
+        networkServiceType: NSURLRequest.NetworkServiceType = .default,
+        urlProtocol: AnyClass? = nil
     ) {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = timeOutRequest
@@ -65,6 +66,26 @@ public final class ServiceCoordinator {
         configuration.httpMaximumConnectionsPerHost = httpMaximumConnectionsPerHost
         configuration.isDiscretionary = isDiscretionary
         configuration.networkServiceType = networkServiceType
+        if let urlProtocol = urlProtocol {
+            configuration.protocolClasses = [urlProtocol]
+        }
+        
+        sessionConfiguration = configuration
+    }
+
+    /// Removes the custom URLSession configuration.
+    ///
+    /// This function sets the `sessionConfiguration` attribute to `nil`, effectively removing any custom URLSession configuration that may have been set.
+    public func removeConfiguration() {
+        sessionConfiguration = nil
+        sessionURL = URLSession.shared
+    }
+
+    /// Retrieves the custom URLSession configuration.
+    ///
+    /// - Returns: The custom URLSession configuration if set, or `nil` if no custom configuration has been specified.
+    public func getConfiguration() -> URLSessionConfiguration? {
+        return sessionConfiguration
     }
 
     // MARK: - Request Function
